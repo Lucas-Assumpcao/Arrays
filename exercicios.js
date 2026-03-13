@@ -1,5 +1,5 @@
 import { produtos } from "./produtos.js";
-console.table(produtos)
+//console.table(produtos)
 
 /* ****************************** INSTRUÇÕES ******************************* 
 
@@ -32,8 +32,14 @@ Data da entrega: até 19/03/2026 */
 
 // ******************************** EXERCÍCIOS *******************************
 
-// 1- Crie uma função que liste todos os produtos em estoque.
+// 1- Crie uma função que liste todos os id's e nomes dos produtos em estoque.
 
+ function listarIDsENome() {
+    return produtos.find((produto) => {
+        console.table (`ID: ${produto.id} - Nome: ${produto.nome}`);
+    });
+ }
+ listarIDsENome()
 // 2- Crie uma função que liste todos os produtos em estoque, de acordo com a curva ABC (A, B ou C) selecionada pelo usuário.
 
 // 3- Crie uma função que liste todos os produtos em estoque, de acordo com a rotatividade selecionada pelo usuário.

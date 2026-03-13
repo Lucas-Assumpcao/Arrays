@@ -133,18 +133,18 @@ export let produtos = [
 //console.table(estoquebaixo);
 
   let custoEstoque = produtos.reduce((acumulador, produto) => acumulador + (produto.preco_compra * produto.estoque), 0);
-  console.log(custoEstoque.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));;
+  //console.log(custoEstoque.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));;
 
   let vendasTotais = produtos.reduce((acumulador, produto) => acumulador + (produto.preco_venda * produto.estoque), 0);
-  console.log(vendasTotais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));;
+  //console.log(vendasTotais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));;
   
   let itenstotais = produtos.reduce((acumulador, produto) => acumulador + produto.estoque, 0);
-  console.log(itenstotais);
+  //console.log(itenstotais);
 
 
 let estoque = produtos.filter(produto => produto.estoque <= 50);
-console.table (estoque);
+//console.table (estoque);
 
 let estoqueFind = produtos.find((produto) => produto.estoque <= 50);
-console.table (estoqueFind);
+//console.table (estoqueFind);
 
