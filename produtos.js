@@ -1,4 +1,4 @@
-let produtos = [
+export let produtos = [
   { id: 1, nome: "Coca-cola 2L", preco_venda: 10.0, preco_compra: 5.0, estoque: 100, rotatividade: "alta", curva_abc: "A" },
   { id: 2, nome: "Pepsi 2L", preco_venda: 9.0, preco_compra: 4.5, estoque: 80, rotatividade: "alta", curva_abc: "B" },
   { id: 3, nome: "Fanta Laranja 2L", preco_venda: 8.0, preco_compra: 4.0, estoque: 60, rotatividade: "media", curva_abc: "B" },
@@ -140,3 +140,11 @@ let produtos = [
   
   let itenstotais = produtos.reduce((acumulador, produto) => acumulador + produto.estoque, 0);
   console.log(itenstotais);
+
+
+let estoque = produtos.filter(produto => produto.estoque <= 50);
+console.table (estoque);
+
+let estoqueFind = produtos.find((produto) => produto.estoque <= 50);
+console.table (estoqueFind);
+
