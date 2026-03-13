@@ -35,7 +35,7 @@ Data da entrega: até 19/03/2026 */
 // 1- Crie uma função que liste todos os id's e nomes dos produtos em estoque.
 
  function listarIDsENome() {
-    return produtos.find((produto) => {
+    return produtos.map((produto) => {
         console.table (`ID: ${produto.id} - Nome: ${produto.nome}`);
     });
  }
