@@ -103,6 +103,11 @@ function adicionarProduto(nome, preco_compra, preco_venda, estoque, rotatividade
 adicionarProduto("Doritos ", 10.00, 15.00, 100, "média", "B");
 
 // 9- Crie uma função que permita ao usuário remover um produto do estoque, solicitando o id a ser removido.
+function removerProduto(id) {
+    let produtoBuscado = produtos.find((produto) => produto.id === id);
+    return produtoBuscado;
+}
+console.table(removerProduto(48));
 
 // 10- Crie uma função que permita ao usuário atualizar as informações de um produto existente no estoque, solicitando o id do produto e as novas informações a serem atualizadas.
 
