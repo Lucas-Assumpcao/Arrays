@@ -42,17 +42,54 @@ Data da entrega: até 19/03/2026 */
  listarIDsENome()
 // 2- Crie uma função que liste todos os produtos em estoque, de acordo com a curva ABC (A, B ou C) selecionada pelo usuário.
 
+function listarProdutosPorCurvaABC(curva) {
+    return produtos.filter((produto) => produto.curva_abc === curva);
+}
+console.table(listarProdutosPorCurvaABC("C"));
+
+
 // 3- Crie uma função que liste todos os produtos em estoque, de acordo com a rotatividade selecionada pelo usuário.
 
+function listarProdutosPorRotatividade(rotatividade) {
+    return produtos.filter((produto) => produto.rotatividade === rotatividade);
+}
+console.table(listarProdutosPorRotatividade("baixa"));
+
 // 4- Crie uma função que liste todos os produtos com base na seleção de rotatividade (alta, média ou baixa) e curva ABC (A, B ou C) pelo usuário.
+
+function listarProdutosPorRotatividadeECurvaABC(rotatividade, curva) {
+    return produtos.filter((produto) => produto.rotatividade === rotatividade && produto.curva_abc === curva);
+}
+console.table(listarProdutosPorRotatividadeECurvaABC("alta", "A"));
+
 
 // 5- Crie uma função que identifique quais produtos precisam ser repostos com base nos critérios de rotatividade e curva ABC mencionados acima.
 
 // 6- Crie uma função que calcule o valor total do estoque, considerando o preço de compra e a quantidade em estoque de cada produto.
 
+function calcularValorTotalEstoque() {
+    return produtos.reduce((acumulador, produto) => acumulador + (produto.preco_compra * produto.estoque), 0);
+}
+console.log(calcularValorTotalEstoque().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));   
+
 // 7- Crie uma função que aplique um desconto de 10% no preço de venda de todos os produtos de baixa rotatividade e curva C e exiba a nova lista de produtos com os preços atualizados.
 
 // 8- Crie uma função que permita ao usuário adicionar um novo produto ao estoque, solicitando as informações necessárias (nome, preço de compra, preço de venda, quantidade em estoque, rotatividade e curva ABC).
+
+function adicionarProduto(nome, preco_compra, preco_venda, estoque, rotatividade, curva_abc) {
+    const novoProduto = {
+        id: produtos.length + 1,
+        nome: nome,
+        preco_compra: preco_compra,
+        preco_venda: preco_venda,
+        estoque: estoque,
+        rotatividade: rotatividade,
+        curva_abc: curva_abc
+    };
+    produtos.push(novoProduto);
+    console.table(produtos);
+}
+adicionarProduto("Produto X", 10.00, 15.00, 100, "média", "B");
 
 // 9- Crie uma função que permita ao usuário remover um produto do estoque, solicitando o id a ser removido.
 
