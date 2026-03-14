@@ -74,6 +74,16 @@ console.log(calcularValorTotalEstoque().toLocaleString('pt-BR', { style: 'curren
 
 // 7- Crie uma função que aplique um desconto de 10% no preço de venda de todos os produtos de baixa rotatividade e curva C e exiba a nova lista de produtos com os preços atualizados.
 
+function promocaoCurvaCRotatividadeBaixa() {
+    let produtosPromocao = produtos
+        .filter((produto) => produto.rotatividade === "baixa" && produto.curva_abc === "C")
+        .map((produto) => ({...produto, desconto: produto.preco_venda * 0.9 }));
+    
+        return produtosPromocao;
+   
+}
+console.table(promocaoCurvaCRotatividadeBaixa());
+
 // 8- Crie uma função que permita ao usuário adicionar um novo produto ao estoque, solicitando as informações necessárias (nome, preço de compra, preço de venda, quantidade em estoque, rotatividade e curva ABC).
 
 function adicionarProduto(nome, preco_compra, preco_venda, estoque, rotatividade, curva_abc) {
