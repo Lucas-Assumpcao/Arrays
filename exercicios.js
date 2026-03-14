@@ -97,9 +97,10 @@ function adicionarProduto(nome, preco_compra, preco_venda, estoque, rotatividade
         curva_abc: curva_abc
     };
     produtos.push(novoProduto);
+    console.log("Produto adicionado com sucesso!");
     console.table(produtos);
 }
-adicionarProduto("Produto X", 10.00, 15.00, 100, "média", "B");
+adicionarProduto("Doritos ", 10.00, 15.00, 100, "média", "B");
 
 // 9- Crie uma função que permita ao usuário remover um produto do estoque, solicitando o id a ser removido.
 
