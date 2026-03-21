@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body{
@@ -13,9 +14,16 @@ body{
 
 fieldset{
     height: 90%;
-    width: 50%;
+    padding: 0px 10px;
+    
 }
 
+#fieldsetDisplay{
+    width: 60%;
+}
+#fieldsetFuncoes{
+    width: 40%;
+}
 #containerCurvaABC{
     display: flex;
     justify-content: space-around;
@@ -28,3 +36,11 @@ fieldset{
     gap: 10px;
     
 }
+
+#containerDisplay{
+    display: grid;
+    grid-template-columns: 1fr 3fr max-content max-content;
+   padding: 10px 20px;
+    gap: 10px;
+}
+
