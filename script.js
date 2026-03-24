@@ -3,10 +3,11 @@ import {produtos} from "./produtos.js";
 const elemento = {
     btnCurva: document.querySelectorAll(".btnCurva"),
     containerDisplay: document.querySelector("#containerDisplay"),
+    btnListarTodos:document.getElementById("listarTodos")
 
 };
 
-console.log(elemento.containerDisplay);
+console.log(elemento.btnListarTodos);
 
 elemento.btnCurva.forEach((item) => {
     item.addEventListener("click", (evento) => {
@@ -52,3 +53,14 @@ function inserirDadosCurvaABC(dados) {
         elemento.containerDisplay.append(linhaProduto.id, linhaProduto.nome, linhaProduto.preco_venda, linhaProduto.estoque);
     });
 }
+
+elemento.btnListarTodos.addEventListener('click', (evento) => {
+    console.log(evento)
+});
+
+function listarIDsENome() {
+    return produtos.map((produto) => {
+        console.table (`ID: ${produto.id} - Nome: ${produto.nome}`);
+    });
+ }
+ listarIDsENome()

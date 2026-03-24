@@ -23,6 +23,7 @@ fieldset{
 }
 #fieldsetFuncoes{
     width: 40%;
+    padding: 20px 10px;
 }
 #containerCurvaABC{
     display: flex;
@@ -50,3 +51,8 @@ fieldset{
     height: 90vh;
 }
 
+.containers {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 20px;
+}
