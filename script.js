@@ -21,6 +21,7 @@ function listarProdutosPorCurvaABC(curva) {
   inserirDadosCurvaABC(produtosFiltrados);
 }
 function inserirDadosCurvaABC(dados) {
+    elemento.containerDisplay.innerHTML = ""; // Limpa o conteúdo anterior
     let colunasGRID = {
         id: document.createElement("p"),
         nome: document.createElement("p"),
@@ -34,5 +35,20 @@ function inserirDadosCurvaABC(dados) {
     colunasGRID.estoque.innerText = "ESTOQUE";
 
     elemento.containerDisplay.append(colunasGRID.id, colunasGRID.nome, colunasGRID.preco_venda, colunasGRID.estoque);
+    
+    dados.forEach((produto) => {
+        let linhaProduto = {
+            id: document.createElement("p"),
+            nome: document.createElement("p"),
+            preco_venda: document.createElement("p"),
+            estoque: document.createElement("p"),
+        };
 
+        linhaProduto.id.innerText = produto.id;
+        linhaProduto.nome.innerText = produto.nome;
+        linhaProduto.preco_venda.innerText = produto.preco_venda;
+        linhaProduto.estoque.innerText = produto.estoque;
+
+        elemento.containerDisplay.append(linhaProduto.id, linhaProduto.nome, linhaProduto.preco_venda, linhaProduto.estoque);
+    });
 }
